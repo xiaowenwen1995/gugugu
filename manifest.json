@@ -1,0 +1,44 @@
+{
+   "manifest_version": 2,
+   "name": "下次一定",
+   "description": "一键三连vs下次一定",
+   "version": "0.0.1",
+   "icons": {
+      "128": "img/icons.png",
+      "16": "img/icons.png",
+      "24": "img/icons.png",
+      "32": "img/icons.png",
+      "48": "img/icons.png",
+      "64": "img/icons.png"
+   },
+   "background": {
+      "page": "background.html"
+   },
+   "browser_action": {
+      "default_icon": "img/icons.png",
+      "default_popup": "popup/index.html",
+      "default_title": "下次一定"
+   },
+	"content_scripts": 
+	[
+		{
+			"matches": ["https://www.bilibili.com/video/*"],
+			"css":["content/css/content.css"],
+			// 多个JS按顺序注入
+			"js": ["content/js/content_video.js"]
+		}
+	],   
+   "options_ui": {
+      "open_in_tab": true,
+      "page": "options/index.html"
+   },
+   "permissions": [
+   	"tabs", 
+   	"alarms", 
+   	"storage", 
+   	"webRequest", 
+   	"webRequestBlocking", 
+   	"contextMenus", 
+   	"https://www.bilibili.com/video/*",  
+   	"https://space.bilibili.com/*"]
+}

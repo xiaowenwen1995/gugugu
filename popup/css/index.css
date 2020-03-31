@@ -1,0 +1,59 @@
+html, body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-width: 8em;
+}
+
+/* 菜单样式 */
+
+.gugu-nav {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.gugu-nav-item {
+    display: block;
+    margin: 2px 0;
+}
+
+.gugu-nav-item > a > .glyphicon {
+    margin-right: 8px;
+}
+
+.gugu-nav-item > a {
+    display: block;
+    padding: 5px 25px 5px 8px;
+    border-radius: 4px;
+    line-height: 1.5em;
+    font-size: 1em;
+    color: #337ab7;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.gugu-nav-item > a:hover {
+    text-decoration: none;
+    background-color: #eee;
+}
+
+.gugu-nav-item > a:hover {
+    color: #23527c;
+}
+
+.gugu-nav-item.gugu-active > a {
+    color: #fff;
+    background-color: #337ab7;
+}
+
+.gugu-divider {
+    height: 1px;
+    overflow: hidden;
+    background-color: #E5E5E5;
+}

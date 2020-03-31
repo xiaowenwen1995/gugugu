@@ -1,0 +1,155 @@
+html, body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    color: #222;
+    font-size: 12px;
+    line-height: 1.7em;
+    margin: 0;
+    overflow-y: scroll;
+}
+
+div, span, ul, li, img, a {
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    word-break: break-word;
+}
+
+div {
+    display: block;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+li {
+    text-align: -webkit-match-parent;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .2s ease,background-color .2s ease;
+}
+
+.gugu-main{
+    width: 1070px;
+    min-height: 600px;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    left:0; 
+    top:0; 
+    right:0; 
+    bottom: 0; 
+    margin: auto;
+}
+
+.gugu-header {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e9ef;
+    margin: 20px 20px 0;
+}
+
+.gugu-profile-name {
+    color: #222;
+    display: inline-block;
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+.gugu-content {
+    padding-bottom: 10px;
+}
+
+.gugu-relation-list {
+    padding: 0 20px 20px;
+}
+
+.gugu-list-item {
+    border-bottom: 1px solid #eee;
+    display: block;
+    padding: 20px 0;
+    position: relative;
+    line-height: 1;
+}
+
+.gugu-avatar {
+    border-radius: 48px;
+    overflow: visible;
+    margin-left: 0;
+    padding-left: 20px;
+    background-size: cover;
+    border-radius: 4px;
+    display: block;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+img {
+    border-radius: 60px;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 0 0 1px #edf2f9;
+    display: block;
+}
+
+.gugu-username {
+    padding: 0 200px 0 0;
+    position: relative;
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1;
+    display: inline-block;
+}
+
+.gugu-fans-action {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    border-radius: 4px;
+    padding: 10px 16px;
+    line-height: 16px;
+    border: 0;
+    float: left;
+    display: block;
+    margin-right: 40px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.gugu-follow {
+    background-color: #00A1D6;
+    color: #FFFFFF;
+}
+
+.gugu-unfollow {
+    background-color: #E7E7E7;
+    color: #999999;
+}
