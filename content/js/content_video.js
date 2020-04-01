@@ -31,16 +31,76 @@ function init(){
 
 window.setTimeout(init,2000);
 
+
+jQuery.fn.wait = function (func, times, interval) {
+    var _times = times || -1, //100次
+    _interval = interval || 20, //20毫秒每次
+    _self = this,
+    _selector = this.selector, //选择器
+    _iIntervalID; //定时器id
+    if( this.length ){ //如果已经获取到了，就直接执行函数
+        func && func.call(this);
+    } else {
+        _iIntervalID = setInterval(function() {
+            if(!_times) { //是0就退出
+                clearInterval(_iIntervalID);
+            }
+            _times <= 0 || _times--; //如果是正数就 --
+             
+            _self = $(_selector); //再次选择
+            if( _self.length ) { //判断是否取到
+                func && func.call(_self);
+                clearInterval(_iIntervalID);
+            }
+        }, _interval);
+    }
+    return this;
+}
+
+
 //一键三连操作
 function gugu(){
-	var like = document.getElementsByClassName("like")[0]; //点赞
-	var coin = document.getElementsByClassName("coin")[0]; //投币
-	var collect = document.getElementsByClassName("collect")[0]; //收藏
-	like.click();  // 执行点击
-	coin.click();
-	collect.click();
+	//var like = document.getElementsByClassName("like")[0]; //点赞
+	//var coin = document.getElementsByClassName("ring-progress")[0]; //投币
+	//var collect = document.getElementsByClassName("collect")[0]; //收藏
+	//like.click();  // 执行点击
+	//coin.click();
+	//collect.click();
+	obj = document.getElementsByClassName("like")[0];
+    obj.target = '_self';
+    var _owh = obj.getBoundingClientRect();
+    var _ox=_owh.width/ 2,_oh=_owh.height/2;
+    _ox = Math.floor(Math.random() * _ox+60);
+    _oh = Math.floor(Math.random() * _oh+60);
+    _ox=_ox+_owh.x;
+    _oh=_oh+_owh.y;        
+    dragandDrop("like",_ox,_oh,0);
 	console.log("已完成一键三连啦！gugugu~");
 }
+
+// https://blog.csdn.net/lctmei/article/details/88885678
+function  dragandDrop(className, clientX, clientY, distance) {
+        var elem = document.getElementsByClassName(className)[0],
+                k = 0,
+                interval;
+        iME(elem,"mousedown",0, 0, clientX, clientY);
+        interval = setInterval(function() {
+            k++;
+            iter(k);
+            if (k === distance) {
+                clearInterval(interval);
+                iME(elem,"mouseup",clientX + k, clientY, 220 + k, 400);
+            }
+        }, 10);
+        function iter(y) {
+            iME(elem,"mousemove",clientX + y, clientY, clientX + y, clientY);
+        }
+        function iME(obj,event,screenXArg,screenYArg,clientXArg,clientYArg){
+            var mousemove = document.createEvent("MouseEvent");
+            mousemove.initMouseEvent(event, true, true, window, 0, screenXArg, screenYArg, clientXArg, clientYArg, 0, 0, 0, 0, 0, null);
+            obj.dispatchEvent(mousemove);
+        }
+    }
 
 //监听弹幕发送
 function sendListen(){
